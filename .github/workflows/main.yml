@@ -93,7 +93,7 @@ jobs:
 
       # ── 9. Construir imagen Docker ──
       - name: Build de la imagen Docker
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/bdget-app:latest .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/mysql-local-2.4:latest .
 
       # ── 10. Escanear imagen Docker con Snyk ──
       - name: Escaneo de imagen Docker con Snyk
@@ -102,9 +102,9 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/bdget-app:latest
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/mysql-local-2.4:latest
           args: --severity-threshold=high
 
       # ── 11. Publicar imagen en DockerHub ──
       - name: Push de la imagen a DockerHub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/bdget-app:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mysql-local-2.4:latest
