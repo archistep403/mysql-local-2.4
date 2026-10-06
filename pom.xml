@@ -115,9 +115,8 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.1.2184</version>
+                <version>5.0.0.4389</version> <!-- O la última versión disponible -->
             </plugin>
-
             <!-- JaCoCo: cobertura de código en los tests -->
             <plugin>
                 <groupId>org.jacoco</groupId>
